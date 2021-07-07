@@ -109,12 +109,7 @@ resource "aws_lambda_function" "default" {
 	// Connect our IAM resource to our lambda function in AWS
 	role = aws_iam_role.default.arn
 
-	// Optional environmental variables
-	environment {
-		variables = {
-			NODE_ENV = "production"
-			SOME_API_KEY = "123456"
-		}
+	
 	}
 }
 
@@ -122,22 +117,17 @@ resource "aws_lambda_function" "default" {
 module "hello-world-lambda" {
 	source = "github.com/click-flow/terraform-modules.git//v0.15/aws-lambda/v2"
 
-	environment = [
-		{ key: "NODE_ENV", value: "production" },
-		{ key: "SOME_API_KEY", value: "123456" },
-	]
 	excluded_files = [
 		".env",
 		".terraform",
 		".terraform.lock.hcl",
-		"docker-compose.yml",
 		"main.tf",
 		"terraform.tfstate",
 		"terraform.tfstate.backup",
 	]
 	handler = "index.handler"
 	name = "hello-world-lambda-via-clickflow"
-	runtime = "nodejs14.x"
+	runtime = "python3.8"
 	source_directory = path.module
 	timeout_after_seconds = 6
 }

@@ -39,7 +39,7 @@ locals {
 }
 
 // 3) Let terraform create a .zip file on your local computer which contains
-//    only our "index.js" file by ignoring any Terraform files (e.g. our .zip)
+//    only our "hellowold.py" file by ignoring any Terraform files (e.g. our .zip)
 data "archive_file" "zip" {
 	excludes = [
 		".env",

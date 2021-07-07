@@ -126,7 +126,7 @@ module "hello-world-lambda" {
 		"terraform.tfstate.backup",
 	]
 	handler = "index.handler"
-	name = "hello-world-lambda-via-clickflow"
+	name = "hello-world-lambda"
 	runtime = "python3.8"
 	source_directory = path.module
 	timeout_after_seconds = 6

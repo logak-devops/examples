@@ -29,7 +29,7 @@ locals {
 	// function exported from the "index" file
 	handler = "index.handler"
 	// Run our lambda in node v14
-	runtime = "nodejs14.x"
+	runtime = "python3.8"
 	// By default lambda only runs for a max of 3 seconds but our
 	// "hello world" is printed after 5 seconds. So, we need to
 	// increase how long we let our lambda run (e.g. 6 seconds)

@@ -16,8 +16,7 @@ terraform {
 // 1) Provide your own access and secret keys so terraform can connect
 //    and create AWS resources (e.g. our lambda function)
 provider "aws" {
-	access_key = "TODO-my-access-key"
-	secret_key = "TODO-my-secret-key"
+	shared_credentials_file = "/root/.aws/credential"
 	region="us-east-1"
 }
 
@@ -46,7 +45,6 @@ data "archive_file" "zip" {
 		".env",
 		".terraform",
 		".terraform.lock.hcl",
-		"docker-compose.yml",
 		"main.tf",
 		"terraform.tfstate",
 		"terraform.tfstate.backup",

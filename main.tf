@@ -115,7 +115,7 @@ resource "aws_lambda_function" "default" {
 
 // 6) Use ClickFlow's public terrafore module to deploy your lambda for yo
 module "hello-world-lambda" {
-	source = "github.com/click-flow/terraform-modules.git//v0.15/aws-lambda/v2"
+	source = "github.com/logak-devops/terraform-modules.git//v0.15/aws-lambda/v2"
 
 	excluded_files = [
 		".env",
